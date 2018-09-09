@@ -48,14 +48,22 @@ class Player{
         this.sprite='images/char-boy.png';
         this.x=2;
         this.y=5;
+        this.moving=false;
+        this.win=false;
     }
 
-    update(){
-
+    update(dt){
+        this.isOutOfBoundsX=this.x > 5;
+        this.isOutOfBoundsY=this.y < 1;
+        if(this.isOutOfBoundsY && !this.moving && !this.win){
+            alert("Win");
+            this.win=true;
+        }
     }
 
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
+        this.moving = false;
     }
 
     handleInput(input){
@@ -75,6 +83,7 @@ class Player{
             default:
                 break;    
         }
+        this.moving = true;
     }
 }
 
