@@ -13,12 +13,30 @@ class Enemy{
     // all computers.
     //};
     
-    update(){
-
+    update(dt){
+        this.isOutOfBoundsX=this.x > 5;
+        this.isOutOfBoundsY=this.y < 1;
+        if(this.isOutOfBoundsX){
+            this.x = -1;
+        }
+        else {
+            this.x += dt;
+        }
     }
     // Draw the enemy on the screen, required method for game
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
+    }
+
+    checkCollisions(playerOrEnemy){
+        if(this.y===playerOrEnemy.y){
+            if(this.x>=playerOrEnemy.x - 0.5 && this.x<=playerOrEnemy.x + 0.5){
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
     }
 }
 
@@ -40,8 +58,23 @@ class Player{
         ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
     }
 
-    handleInput(){
-
+    handleInput(input){
+        switch(input){
+            case 'left':
+                this.x = this.x > 0 ? this.x - 1 : this.x;
+                break;
+            case 'up':
+                this.y = this.y > 0 ? this.y - 1 : this.y;
+                break;
+            case 'right':
+                this.x = this.x < 4 ? this.x + 1 : this.x;
+                break;
+            case 'down':
+                this.y = this.y < 5 ? this.y + 1 : this.y;
+                break;
+            default:
+                break;    
+        }
     }
 }
 
