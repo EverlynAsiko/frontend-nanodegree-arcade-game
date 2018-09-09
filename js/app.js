@@ -1,7 +1,9 @@
 // Enemies our player must avoid
 class Enemy{
-    constructor(){
+    constructor(x,y){
         this.sprite= 'images/enemy-bug.png';
+        this.x=x;
+        this.y=y;
     }
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
@@ -16,7 +18,7 @@ class Enemy{
     }
     // Draw the enemy on the screen, required method for game
     render(){
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
     }
 }
 
@@ -35,7 +37,7 @@ class Player{
     }
 
     render(){
-        ctx.drawImage(Resources.get(this.sprite), this.x+202, this.y+312);
+        ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
     }
 
     handleInput(){
@@ -48,6 +50,7 @@ class Player{
 
 const player=new Player();
 // Place all enemy objects in an array called allEnemies
+const allEnemies=[...Array(3)].map((_,i)=>new Enemy(0,i+1));
 // Place the player object in a variable called player
 
 
