@@ -32,6 +32,7 @@ var Engine = (function(global) {
         checkCollisions();
     }
 
+    //Check if entities have collided and resets the player
     function checkCollisions() {
         allEnemies.forEach(enemy => {
             if(enemy.checkCollisions(player)) {
@@ -86,7 +87,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        //noop       
     }
 
     /* Go ahead and load all of the images we know we're going to need to

@@ -72,12 +72,15 @@ class Player extends Entity{
         if(this.isOutOfBoundsY && !this.moving && !this.win){
             alert("Win");
             this.win=true;
+            this.x=2;
+            this.y=5;
         }
     }
 
     render(){
         super.render();
         this.moving = false;
+        this.win=false;
     }
 
     //function to determine how the player moves
@@ -114,6 +117,7 @@ const enemy4=new Enemy(4,1,1);
 //Array for all enemies
 const allEnemies=[];
 allEnemies.push(enemy1,enemy2,enemy3,enemy4);
+
 
 // This listens for key presses and sends the keys to your Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
