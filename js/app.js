@@ -70,7 +70,8 @@ class Player extends Entity{
         super.update(dt);
         //Check if player has reached water point for them to win the game
         if(this.isOutOfBoundsY && !this.moving && !this.win){
-            alert("Win");
+            $('#winningInfo').text(`You are on fire! Bravo!`);
+            $('#modalWindow').modal('toggle');
             this.win=true;
             this.x=2;
             this.y=5;
