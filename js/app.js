@@ -24,9 +24,9 @@ class Entity{
 
 //Enemy class
 class Enemy extends Entity{
-    constructor(x,y,speed){
+    constructor(sprite,x,y,speed){
         super();
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = sprite;
         //Allows for setting the start points and the speed when enemy is instantiated
         this.x = x;
         this.y = y;
@@ -70,7 +70,7 @@ class Player extends Entity{
         super.update(dt);
         //Check if player has reached water point for them to win the game
         if(this.isOutOfBoundsY && !this.moving && !this.win){
-            $('#winningInfo').text(`You are on fire! Bravo!`);
+            $('#winningInfo').text(`Finally! I was parched.`);
             $('#modalWindow').modal('toggle');
             this.win=true;
             this.x=2;
@@ -110,10 +110,10 @@ class Player extends Entity{
 const player=new Player();
 
 //Instances of enemies created
-const enemy1=new Enemy(0,1,1);
-const enemy2=new Enemy(0,2,4);
-const enemy3=new Enemy(0,3,2);
-const enemy4=new Enemy(4,1,1);
+const enemy1=new Enemy('images/enemy-bug.png',0,1,1);
+const enemy2=new Enemy('images/Rock.png',0,2,4);
+const enemy3=new Enemy('images/Rock.png',0,3,2);
+const enemy4=new Enemy('images/enemy-bug.png',4,1,1);
 
 //Array for all enemies
 const allEnemies=[];
