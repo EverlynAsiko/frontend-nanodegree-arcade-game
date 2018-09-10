@@ -28,8 +28,10 @@ var Engine = (function(global) {
     }
 
     function update(dt) {
-        updateEntities(dt);
-        checkCollisions();
+        if(!paused) {
+            updateEntities(dt);
+            checkCollisions();            
+        }
     }
 
     //Check if entities have collided and resets the player

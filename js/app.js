@@ -119,6 +119,21 @@ const enemy4=new Enemy('images/enemy-bug.png',4,1,1);
 const allEnemies=[];
 allEnemies.push(enemy1,enemy2,enemy3,enemy4);
 
+//Added pause functionality
+let paused = false;
+let count = 0;
+let pauseBtn = document.getElementById('pauseBtn');
+pauseBtn.addEventListener('click',pause);
+function pause() {
+    count++;        
+    if(count % 2 !== 0){
+        paused = true;
+    }
+    else {
+        paused = false;
+    } 
+    return paused;        
+}
 
 // This listens for key presses and sends the keys to your Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
