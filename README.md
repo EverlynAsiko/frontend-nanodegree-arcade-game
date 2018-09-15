@@ -14,4 +14,12 @@ Also, their is a pause functionality added to the game.
 
 More functionality will be added as practising continues.
 
+**How to load the game locally**
+
+Download the repository and open the index.html in your browser. Also, clone the repository and open the index.html in your browser to have it locally on your machine.
+
+**How to contribute**
+
+Fork the repository, clone it to you local machine make the contribution, push it to your repository and create a pull request. I will be happy to review and accept it.
+
 **Happy crossing**
