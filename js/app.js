@@ -2,8 +2,7 @@
 //1. https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000
 //2. https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
 //3. https://matthewcranford.com/arcade-game-walkthrough-part-5-adding-enemies/
-
-
+"use strict";
 //Parent class for all objects in the game
 class Entity{
     constructor(){
